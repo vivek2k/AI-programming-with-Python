@@ -4,7 +4,7 @@
 #                                                                             
 # PROGRAMMER: Vivekanandan M
 # DATE CREATED: 8 may, 2020                                 
-# REVISED DATE: 
+# REVISED DATE: 14 May, 2020
 # PURPOSE: Create the function get_pet_labels that creates the pet labels from 
 #          the image's filename. This function inputs: 
 #           - The Image Folder as image_dir within get_pet_labels function and 
@@ -56,6 +56,8 @@ def get_pet_labels(image_dir):
 #     print("----------------------------------------")
     
     for i in range(0,len(fileName_list),1):
+
+        if fileName_list[i].startswith(".") : continue
         petImage = fileName_list[i]
         lowPetImage = petImage.lower()
         lowPetName_wordList = lowPetImage.split("_")
